@@ -1,14 +1,5 @@
 <div class="recipe">
-  <h1>Ost med hest</h1>
-  <div class="ingredients">
-    <ul>
-      <li>Hest</li>
-      <li>Ost</li>
-    </ul>
-  </div>
-  <div class="preparation">
-    <ol>
-      <li>Læg hesten ovenpå osten.</li>
-    </ol>
-  </div>
+  <h1>{{ $ctrl.recipe.title }}</h1>
+  <div class="ingredients" ng-bind-html="$ctrl.recipe.ingredients | markdown"></div>
+  <div class="preparation" ng-bind-html="$ctrl.recipe.preparation | markdown"></div>
 </div>
