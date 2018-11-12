@@ -1,24 +1,31 @@
-<table>
-    <tbody>
-        <tr>
-            <td>Title:</td>
-            <td><input type="text" ng-model="$ctrl.recipe.title" /></td>
-        </tr>
-        <tr>
-            <td>Ingredients:</td>
-            <td><textarea ng-model="$ctrl.recipe.ingredients"></textarea></td>
-        </tr>
-        <tr>
-            <td>Preparation:</td>
-            <td><textarea ng-model="$ctrl.recipe.preparation"></textarea></td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>
-                <input type="file" onchange="angular.element(this).scope().$ctrl.load(event);" />
-                <button ng-click="$ctrl.save();">Save</button>
-                <a href="{{$ctrl.url}}" ng-if="$ctrl.url" download="{{$ctrl.download}}">Right click to save</a>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<form class="form-horizontal">
+    <div class="form-group">
+        <label class="col-sm-3 control-label" for="title">Title</label>
+        <div class="col-sm-9">
+            <input id="title" class="form-control" type="text" ng-model="$ctrl.recipe.title" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label" for="ingredients">Ingredients</label>
+        <div class="col-sm-9">
+            <textarea id="ingredients" ng-model="$ctrl.recipe.ingredients" class="form-control"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label" for="preparation">Preparation</label>
+        <div class="col-sm-9">
+            <textarea id="preparation" ng-model="$ctrl.recipe.preparation" class="form-control"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-9">
+            <input type="file" class="form-control" onchange="angular.element(this).scope().$ctrl.load(event);" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-9">
+            <button ng-click="$ctrl.save();">Save</button>
+            <a href="{{$ctrl.url}}" ng-if="$ctrl.url" download="{{$ctrl.download}}">Right click to save</a>
+        </div>
+    </div>
+</form>

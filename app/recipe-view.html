@@ -1,5 +1,11 @@
-<div class="recipe">
-  <h1>{{ $ctrl.recipe.title }}</h1>
-  <div class="ingredients" ng-bind-html="$ctrl.recipe.ingredients | markdown"></div>
-  <div class="preparation" ng-bind-html="$ctrl.recipe.preparation | markdown"></div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>{{ $ctrl.recipe.title }}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3" ng-bind-html="$ctrl.recipe.ingredients | markdown"></div>
+    <div class="col-xs-9" ng-bind-html="$ctrl.recipe.preparation | markdown"></div>
+  </div>
 </div>

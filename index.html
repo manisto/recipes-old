@@ -1,6 +1,7 @@
 <!doctype html>
 <html ng-app="recipes" ng-strict-di>
     <head>
+        <link rel="stylesheet" type="text/css" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" />
         <script src="/node_modules/angular/angular.min.js"></script>
         <script src="/node_modules/angular-sanitize/angular-sanitize.min.js"></script>
         <script src="/node_modules/showdown/dist/showdown.min.js"></script>
@@ -17,37 +18,16 @@
                 }
             }
 
-            body {
-                margin: 0;
-                padding: 0;
-            }
-
             recipe-view {
                 display: block;
+                font-family: serif;
+                font-size: 150%;
+                border: 5pt solid black;
+                padding: 5pt;
             }
 
-            input[type="text"] {
-                width: 500px;
-            }
-
-            textarea {
-                width: 500px;
-                height: 200px;
-            }
-
-            .recipe {
-                page-break-before: always;
-                overflow: auto;
-            }
-
-            .ingredients {
-                float: left;
-                width: 30%;
-            }
-
-            .preparation {
-                float: left;
-                width: 70%;
+            html, body, app, recipe-view {
+                height: 100%;
             }
         </style>
     </head>
