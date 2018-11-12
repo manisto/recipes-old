@@ -1,0 +1,42 @@
+<!doctype html>
+<html ng-app="recipes" ng-strict-di>
+    <head>
+        <script src="/node_modules/angular/angular.min.js"></script>
+        <script src="/node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+        <script src="/node_modules/showdown/dist/showdown.min.js"></script>
+        <script type="module" src="/app/recipes.module.js"></script>
+        <style>
+            @page {
+                size: A4 landscape;
+                margin: 0cm;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .recipe {
+                page-break-before: always;
+                overflow: auto;
+                background-color: blue;
+            }
+
+            .ingredients {
+                float: left;
+                width: 30%;
+                background-color: green;
+            }
+
+            .preparation {
+                float: left;
+                width: 70%;
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <recipe-view></recipe-view>
+        <recipe-view></recipe-view>
+    </body>
+</html>
