@@ -12,5 +12,12 @@
             <td>Preparation:</td>
             <td><textarea ng-model="$ctrl.recipe.preparation"></textarea></td>
         </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <button ng-click="$ctrl.save();">Save</button>
+                <a href="{{$ctrl.url}}" ng-if="$ctrl.url" download="{{$ctrl.download}}">Right click to save</a>
+            </td>
+        </tr>
     </tbody>
 </table>

@@ -13,3 +13,7 @@ recipesModule.component("recipeView", RecipeViewComponent);
 recipesModule.component("recipeEdit", RecipeEditComponent);
 recipesModule.service("recipeHtmlService", RecipeHtmlService);
 recipesModule.filter("markdown", markdownFilter);
+
+recipesModule.config(["$compileProvider", function($compileProvider: ng.ICompileProvider) {
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(blob):/);
+}]);

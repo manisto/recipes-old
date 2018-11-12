@@ -10,11 +10,11 @@
                 recipe-edit {
                     display: none;
                 }
-            }
 
-            @page {
-                size: A4 landscape;
-                margin: 2cm;
+                @page {
+                    size: A4 landscape;
+                    margin: 2cm;
+                }
             }
 
             body {
@@ -26,22 +26,28 @@
                 display: block;
             }
 
+            input[type="text"] {
+                width: 500px;
+            }
+
+            textarea {
+                width: 500px;
+                height: 200px;
+            }
+
             .recipe {
                 page-break-before: always;
                 overflow: auto;
-                background-color: blue;
             }
 
             .ingredients {
                 float: left;
                 width: 30%;
-                background-color: green;
             }
 
             .preparation {
                 float: left;
                 width: 70%;
-                background-color: red;
             }
         </style>
     </head>
