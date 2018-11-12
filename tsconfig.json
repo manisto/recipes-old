@@ -1,0 +1,10 @@
+{
+    "compileOnSave": true,
+    "include": [
+        "app/**/*"
+    ],
+    "compilerOptions": {
+        "module": "esnext",
+        "moduleResolution": "node",
+    }
+}

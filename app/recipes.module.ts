@@ -1,3 +1,5 @@
+declare let angular: typeof import("angular");
+
 import {RecipeView} from "./recipe-view.component.js";
 import {RecipeHtmlService} from "./recipe-html.service.js";
 import {markdownFilter} from "./markdown.filter.js";

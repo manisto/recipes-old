@@ -1,5 +1,5 @@
 export let markdownFilter = function(recipeHtmlService) {
-    return function(input) {
+    return function(input: string): string {
         return recipeHtmlService.toHtml(input);
     }
 };
