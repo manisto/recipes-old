@@ -8,7 +8,7 @@ class RecipeEditController {
             URL.revokeObjectURL(this.url);
         }
 
-        let json: string = JSON.stringify(this.recipe);
+        let json: string = JSON.stringify(this.recipe, null, 2);
         let blob: Blob = new Blob([json], {type: "application/json"});
         this.url = URL.createObjectURL(blob);
         this.download = this.recipe.title.toLowerCase().replace(/ /g, "-") + ".json";
