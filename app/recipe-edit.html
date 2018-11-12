@@ -15,6 +15,7 @@
         <tr>
             <td>&nbsp;</td>
             <td>
+                <input type="file" onchange="angular.element(this).scope().$ctrl.load(event);" />
                 <button ng-click="$ctrl.save();">Save</button>
                 <a href="{{$ctrl.url}}" ng-if="$ctrl.url" download="{{$ctrl.download}}">Right click to save</a>
             </td>
