@@ -6,6 +6,12 @@
         <script src="/node_modules/showdown/dist/showdown.min.js"></script>
         <script type="module" src="/app/recipes.module.js"></script>
         <style>
+            @media print {
+                recipe-edit {
+                    display: none;
+                }
+            }
+
             @page {
                 size: A4 landscape;
                 margin: 2cm;
@@ -14,6 +20,10 @@
             body {
                 margin: 0;
                 padding: 0;
+            }
+
+            recipe-view {
+                display: block;
             }
 
             .recipe {
