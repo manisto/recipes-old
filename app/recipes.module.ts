@@ -7,7 +7,7 @@ import {RecipeHtmlService} from "./recipe-html.service.js";
 import {markdownFilter} from "./markdown.filter.js";
 import {onFilesSelected} from "./on-files-selected.directive.js";
 
-let recipesModule = angular.module("recipes", ["ngSanitize"]);
+let recipesModule = angular.module("recipes", ["ngSanitize", "ui.bootstrap"]);
 
 recipesModule.component("app", AppComponent);
 recipesModule.component("recipeView", RecipeViewComponent);

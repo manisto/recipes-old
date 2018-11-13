@@ -1,13 +1,15 @@
 class RecipeEditController {
-    static $inject: string[] = ["$scope"];
+    static $inject: string[] = ["$scope", "$uibModal"];
     recipe: any;
     onRecipeLoaded: ({recipe: any}) => void;
     url: string;
     download: string;
     $scope: ng.IRootScopeService;
+    $uibModal: ng.ui.bootstrap.IModalService;
 
-    constructor($scope) {
+    constructor($scope, $uibModal: ng.ui.bootstrap.IModalService) {
         this.$scope = $scope;
+        this.$uibModal = $uibModal;
     }
 
     save() {
@@ -33,6 +35,12 @@ class RecipeEditController {
 
         let file = files[0];
         reader.readAsText(file);
+    }
+
+    newSave():void {
+        this.$uibModal.open({
+            template: "wat"
+        });
     }
 }
 
