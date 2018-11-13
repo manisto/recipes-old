@@ -21,7 +21,7 @@ class RecipeEditController {
         this.download = this.recipe.title.toLowerCase().replace(/ /g, "-") + ".json";
     }
 
-    load(event: Event) {
+    load(files: FileList) {
         let reader: FileReader = new FileReader();
 
         reader.onloadend = () => {
@@ -31,7 +31,7 @@ class RecipeEditController {
             this.$scope.$apply();
         };
 
-        let file = (event.target as HTMLInputElement).files[0];
+        let file = files[0];
         reader.readAsText(file);
     }
 }
