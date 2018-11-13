@@ -36,12 +36,6 @@ class RecipeEditController {
         let file = files[0];
         reader.readAsText(file);
     }
-
-    newSave():void {
-        this.$uibModal.open({
-            template: "wat"
-        });
-    }
 }
 
 export let RecipeEditComponent: ng.IComponentOptions = {
