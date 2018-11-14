@@ -14,21 +14,23 @@
                 }
 
                 @page {
-                    size: A4 landscape;
-                    margin: 2cm;
+                    size: A4 portrait;
+                    margin: 1cm;
                 }
             }
 
             recipe-view {
                 display: block;
                 font-family: serif;
-                font-size: 150%;
                 border: 5pt solid black;
-                padding: 5pt;
             }
 
-            html, body, app, recipe-view {
+            html, body, app {
                 height: 100%;
+            }
+
+            recipe-view {
+                height: calc(50% - 1cm);
             }
         </style>
     </head>
