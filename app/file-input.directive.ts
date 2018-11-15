@@ -2,7 +2,7 @@ interface FileInputScope extends ng.IRootScopeService {
     onFilesSelected: ({files: FileList}) => void;
 }
 
-export let fileInput: ng.IDirectiveFactory = () => {
+export let fileInputDirective: ng.IDirectiveFactory = () => {
     function link(scope: FileInputScope, element: JQLite) {
         let button: JQLite = element.find("button");
         let input: JQLite = element.find("input");

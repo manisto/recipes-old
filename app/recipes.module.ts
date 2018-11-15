@@ -5,7 +5,7 @@ import {RecipeViewComponent} from "./recipe-view.component.js";
 import {RecipeEditComponent} from "./recipe-edit.component.js";
 import {RecipeHtmlService} from "./recipe-html.service.js";
 import {markdownFilter} from "./markdown.filter.js";
-import {fileInput} from "./file-input.directive.js"
+import {fileInputDirective} from "./file-input.directive.js"
 
 let recipesModule = angular.module("recipes", ["ngSanitize", "ui.bootstrap"]);
 
@@ -14,7 +14,7 @@ recipesModule.component("recipeView", RecipeViewComponent);
 recipesModule.component("recipeEdit", RecipeEditComponent);
 recipesModule.service("recipeHtmlService", RecipeHtmlService);
 recipesModule.filter("markdown", markdownFilter);
-recipesModule.directive("fileInput", fileInput);
+recipesModule.directive("fileInput", fileInputDirective);
 
 recipesModule.config(["$compileProvider", function($compileProvider: ng.ICompileProvider) {
     $compileProvider.aHrefSanitizationWhitelist(/^\s*(blob):/);
