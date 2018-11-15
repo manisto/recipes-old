@@ -2,8 +2,6 @@ class RecipeEditController {
     static $inject: string[] = ["$scope", "$uibModal"];
     recipe: any;
     onRecipeLoaded: ({recipe: any}) => void;
-    url: string;
-    download: string;
     $scope: ng.IRootScopeService;
     $uibModal: ng.ui.bootstrap.IModalService;
 
@@ -13,14 +11,20 @@ class RecipeEditController {
     }
 
     save() {
-        if (this.url) {
-            URL.revokeObjectURL(this.url);
-        }
-
         let json: string = JSON.stringify(this.recipe, null, 2);
         let blob: Blob = new Blob([json], {type: "application/json"});
-        this.url = URL.createObjectURL(blob);
-        this.download = this.recipe.title.toLowerCase().replace(/ /g, "-") + ".json";
+        let url: string = URL.createObjectURL(blob);
+        let filename: string = this.recipe.title.toLowerCase().replace(/ /g, "-") + ".json";
+
+        this.$uibModal.open({
+            component: "saveRecipeDialog",
+            resolve: {
+                url: () => url,
+                filename: () => filename,
+            }
+        }).result.finally(() => {
+            URL.revokeObjectURL(url);
+        });
     }
 
     load(files: FileList) {
