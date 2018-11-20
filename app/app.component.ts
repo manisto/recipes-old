@@ -1,5 +1,5 @@
 class AppController {
-    recipe: any;
+    recipe: any = {};
 
     constructor() {
     }
